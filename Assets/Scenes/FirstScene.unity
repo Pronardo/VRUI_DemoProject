@@ -272,6 +272,16 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeEnterEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeLeaveEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4988302397574326, guid: aad83d8a644821f4fa0db3a7302f7e65, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -304,9 +314,77 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1722996812}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeLeaveEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeLeaveEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeLeaveEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1722996812}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Scan
+      objectReference: {fileID: 0}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeLeaveEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Unscan
+      objectReference: {fileID: 0}
+    - target: {fileID: 114541096354383226, guid: aad83d8a644821f4fa0db3a7302f7e65,
+        type: 2}
+      propertyPath: GazeLeaveEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aad83d8a644821f4fa0db3a7302f7e65, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1722996804 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1105104658412304, guid: aad83d8a644821f4fa0db3a7302f7e65,
+    type: 2}
+  m_PrefabInternal: {fileID: 1569015942}
+--- !u!114 &1722996812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1722996804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1497f920ad4fce141ae0a8c585cf6b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScanningFrameObject: {fileID: 1827212031662270, guid: ca4ad7431b8cab645896eafc26782fd3,
+    type: 2}
 --- !u!1001 &1911693668
 Prefab:
   m_ObjectHideFlags: 0

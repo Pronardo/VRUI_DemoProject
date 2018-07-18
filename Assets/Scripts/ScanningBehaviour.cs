@@ -1,14 +1,30 @@
-﻿using UnityEngine;
-using System.Collections;
-public class Draw : MonoBehaviour
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ScanningBehaviour : MonoBehaviour
 {
-    public GameObject lines;
-    public void showLines()
+    public GameObject ScanningFrameObject;
+    private GameObject Scanner;
+
+    void Awake()
     {
-        lines.SetActive(true);
+        Scanner=Instantiate(ScanningFrameObject, this.transform.position, this.transform.rotation);
+        Scanner.SetActive(false);
+        Debug.Log("OnAwake");
     }
-    public void hideLines()
+
+    //Order to spawn scan frame around the Object the script is attached to
+    public void Scan()
     {
-        lines.SetActive(false);
+        Scanner.SetActive(true);
+        Debug.Log("Unscan - activate frame: active =" + Scanner.activeSelf);
+    }
+
+    //Order to undo the scanning frame
+    public void Unscan()
+    {
+        Scanner.SetActive(false);
+        Debug.Log("Unscan - deactivate frame: active =" + Scanner.activeSelf);
     }
 }
