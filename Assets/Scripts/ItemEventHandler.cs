@@ -19,11 +19,14 @@ public class ItemEventHandler : MonoBehaviour {
 
     void OnGazeEnter()
     {
-        GazeEnterEvent.Invoke();
+        Debug.Log("GazeEnter");
+            GazeEnterEvent.Invoke();
     }
 
     void OnGazeLeave()
     {
+        Debug.Log("GazeLeave");
         GazeLeaveEvent.Invoke();
+
     }
 }

@@ -16,11 +16,14 @@ public class GlowBehaviour : MonoBehaviour {
    public void HighlightRendering()
     {
         sRenderer.material = HighlightedMaterial;
+        Debug.Log("SetMaterial: Highlight");
+
     }
 
     public void DefaultRendering()
     {
        sRenderer.material = DefaultMaterial;
+        Debug.Log("SetMaterial: Default");
     }
 
 }

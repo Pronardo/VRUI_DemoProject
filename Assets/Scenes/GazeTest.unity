@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1497f920ad4fce141ae0a8c585cf6b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScanningFrameObject: {fileID: 1827212031662270, guid: ca4ad7431b8cab645896eafc26782fd3,
+  ScanningFrameObject: {fileID: 1649190387018890, guid: 251a17a84a51ceb418458e96253af608,
     type: 2}
 --- !u!114 &1498302133
 MonoBehaviour:
