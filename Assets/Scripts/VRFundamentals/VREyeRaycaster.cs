@@ -1,8 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-namespace VRStandardAssets.Utils
-{
     // In order to interact with objects in the scene
     // this class casts a ray into the scene and if it finds
     // a VRInteractiveItem it exposes it for other classes to use.
@@ -10,7 +8,6 @@ namespace VRStandardAssets.Utils
     public class VREyeRaycaster : MonoBehaviour
     {
         public event Action<RaycastHit> OnRaycasthit;                   // This event is called every frame that the user's gaze is over a collider.
-
 
         [SerializeField] private Transform m_Camera;
         [SerializeField] private LayerMask m_ExclusionLayers;           // Layers to exclude from the raycast.
@@ -20,6 +17,7 @@ namespace VRStandardAssets.Utils
         [SerializeField] private float m_DebugRayLength = 5f;           // Debug ray length.
         [SerializeField] private float m_DebugRayDuration = 1f;         // How long the Debug ray will remain visible.
         [SerializeField] private float m_RayLength = 500f;              // How far into the scene the ray is cast.
+        [SerializeField] public float GazeTimer = 0.0f;
 
 
         private VRInteractiveItem m_CurrentInteractible;                //The current interactive item
@@ -143,4 +141,3 @@ namespace VRStandardAssets.Utils
 
         }
     }
-}
