@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114572241373124802}
   - component: {fileID: 114221536675600642}
   - component: {fileID: 114125807258741916}
+  - component: {fileID: 114208498080209240}
   m_Layer: 0
   m_Name: MenuActivationSphere
   m_TagString: UI
@@ -40,9 +41,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1105104658412304}
-  m_LocalRotation: {x: 0.2588191, y: -0, z: -0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 1.27, z: 2.36}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.35, z: 0.848}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -102,6 +103,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GazeTimer: 0
   TimeGazeGlobally: 1
+--- !u!114 &114208498080209240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105104658412304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccee2d58156ec864ea792c5e5e6ce298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114221536675600642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,8 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1497f920ad4fce141ae0a8c585cf6b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScanningFrameObject: {fileID: 1827212031662270, guid: ca4ad7431b8cab645896eafc26782fd3,
-    type: 2}
+  ScanningObjectType: 1
 --- !u!114 &114541096354383226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,7 +193,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   ActivationEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114208498080209240}
+        m_MethodName: ShowMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114572241373124802

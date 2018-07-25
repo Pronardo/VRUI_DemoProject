@@ -57,8 +57,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4252199576071252}
-  - component: {fileID: 33418008830901040}
-  - component: {fileID: 23647035534645198}
   - component: {fileID: 114859427385711882}
   m_Layer: 0
   m_Name: ScanFrameManager
@@ -87,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1580537820309694}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.16999969, y: 8.33, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4441381658838602}
@@ -124,41 +122,6 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 733cb6dcf7420184f828458a9aa3e61a, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!23 &23647035534645198
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1580537820309694}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -227,13 +190,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1129486075737402}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33418008830901040
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1580537820309694}
-  m_Mesh: {fileID: 0}
 --- !u!114 &114149327272324324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FramePerScaleX: 0.1
   FramePerScaleY: 0.1
+  RelativeFrameDepth: 0.5
 --- !u!114 &114168956890603810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,3 +250,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FramePerScaleX: 0.1
   FramePerScaleY: 0.1
+  RelativeFrameDepth: 0.5
