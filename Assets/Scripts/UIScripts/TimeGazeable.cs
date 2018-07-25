@@ -11,7 +11,7 @@ public class TimeGazeable : MonoBehaviour
     private float timeRemaining;
 
     // Use this for initialization
-    void Awake()
+    private void OnEnable()
     {
         if (TimeGazeGlobally)
         {
