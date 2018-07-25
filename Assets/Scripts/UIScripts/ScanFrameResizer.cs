@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class ScanFrameResizer : MonoBehaviour {
 
-    public float FrameWidth = 0.1f;
-	// Use this for initialization
-	void Awake () {
-        Transform myParent = transform.parent;
-        if (myParent == null)
+    //Every object which has the ScanningBehaviour script attached, will set itself as ScannableObject by refering to this property
+    public GameObject ScannableObject { get; set; }
+    [Tooltip("FramePerScale describes a prozentual scale relative to X-Axis for the appended Frame (Input: 10%=0.1)")]
+    public float FramePerScaleX = 0.1f;
+    [Tooltip("FramePerScale describes a prozentual scale relative to Y-Axis for the appended Frame (Input: 10%=0.1)")]
+    public float FramePerScaleY = 0.1f;
+    [Tooltip("The relation between the depths of the the ScannableObject and the ScanningFrame(Input: 0.5 means 50% of the ScannableObject's depth")]
+    public float RelativeFrameDepth = 0.5f;
+   
+    void Awake() {
+        if (ScannableObject == null)
         {
-            Debug.Log("parent reference null!");
+            Debug.Log("object reference null!");
         }
     
-        Renderer parentrenderer = transform.parent.GetComponent<Renderer>();
-        if (parentrenderer == null)
+        Renderer scannableRenderer = ScannableObject.GetComponent<Renderer>();
+        if (scannableRenderer == null)
         {
-            Debug.Log("parentrenderer reference null!");
+            Debug.Log("scannableRenderer reference null!");
         }
-
-        Vector3 parentDimension = parentrenderer.bounds.size;
+        Vector3 scannableDimension = scannableRenderer.bounds.size;
+        float RelativeFrameWidthX = scannableDimension.x * FramePerScaleX;
+        float RelativeFrameWidthY = scannableDimension.y * FramePerScaleY;
         this.transform.localScale =
-        new Vector3(parentDimension.x + FrameWidth, parentDimension.y + FrameWidth, parentDimension.z/2);
-       
+        new Vector3(scannableDimension.x + RelativeFrameWidthX, scannableDimension.y + RelativeFrameWidthY, scannableDimension.z*RelativeFrameDepth);
         /*Vector3 parentPos = this.transform.parent.transform.position;
         this.transform.position = new Vector3(parentPos.x+parentDimension.x/2,parentPos.y,parentPos.z);*/
     }

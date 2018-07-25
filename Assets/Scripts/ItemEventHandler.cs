@@ -27,14 +27,14 @@ public class ItemEventHandler : MonoBehaviour {
 
     void OnGazeEnter()
     {
-        Debug.Log("GazeEnter");
+        Debug.Log("ItemEventHandler: GazeEnter");
         ProcessTimeGazeable(true);
             GazeEnterEvent.Invoke();
     }
 
     void OnGazeLeave()
     {
-        Debug.Log("GazeLeave");
+        Debug.Log("ItemEventHandler: GazeLeave");
         ProcessTimeGazeable(false);
             GazeLeaveEvent.Invoke();
     }
@@ -43,6 +43,6 @@ public class ItemEventHandler : MonoBehaviour {
     {
         var gazeable = this.gameObject.GetComponent<TimeGazeable>();
         if (gazeable != null) { gazeable.enabled = enableStat; }
-        else { Debug.Log("Script TimeGazeable not attached -> Time-based gazing disabled!"); }
+        else { Debug.Log("ItemEventHandler: Script TimeGazeable not attached -> Time-based gazing disabled!"); }
     }
 }

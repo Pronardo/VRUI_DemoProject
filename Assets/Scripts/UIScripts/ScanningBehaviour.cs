@@ -4,31 +4,38 @@ using UnityEngine;
 
 public class ScanningBehaviour : MonoBehaviour
 {
-    public GameObject ScanningFrameObject;
-    private GameObject Scanner;
+    public ScannableType ScanningObjectType = ScannableType.RECTANGLE;
+
+    private GameObject ScanFrameManager;
+    private ScanFrameHandler frameHandleMeths;
 
     void Start()
     {
-            Debug.Log("ScanningBehaviour - OnStart");
-            Scanner = Instantiate(ScanningFrameObject,this.transform.position,this.transform.rotation);
-            Scanner.transform.SetParent(this.gameObject.transform);
-            Unscan();
+        Debug.Log("ScanningBehaviour - OnStart");
+        ScanFrameManager = GameObject.Find("ScanFrameManager");
+        if (ScanFrameManager == null)
+        {
+            ScanFrameManager = Instantiate((GameObject)Resources.Load("ScanFrameManager"));
+        }
+        frameHandleMeths = ScanFrameManager.GetComponent<ScanFrameHandler>();
+        if (frameHandleMeths == null) { Debug.LogError("ScanningBehaviour: The ScanFrameManager can only work with ScanningManagement script attached"); this.enabled = false; }
 
-            Debug.Log("Parent of ScannerObject " + Scanner.transform.parent);
+        Unscan();
     }
 
     //Order to spawn scan frame around the Object the script is attached to
     public void Scan()
     {
-            Scanner.SetActive(true);
-            Debug.Log("Scan - activate frame: active =" + Scanner.activeSelf);
-        
+        frameHandleMeths.EnableFrame(ScanningObjectType, this.gameObject);
+        Debug.Log("ScanningBehaviour: Scan - activate frame");
     }
 
     //Order to undo the scanning frame
     public void Unscan()
     {
-            Scanner.SetActive(false);
-            Debug.Log("Unscan - deactivate frame: active =" + Scanner.activeSelf);
+        frameHandleMeths.ResetFame();
+        Debug.Log("ScanningBehaviour: Unscan - deactivate frame");
     }
 }
+
+public enum ScannableType { RECTANGLE, SPHERE };

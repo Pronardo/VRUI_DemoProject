@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114833912549581316}
   - component: {fileID: 114049475075170126}
   m_Layer: 0
-  m_Name: ScanningFrameCircle
+  m_Name: ScanningFrameSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd13a9ae4413ed142850a5fbb3e1b972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrameWidth: 0.1
+  FramePerScaleX: 0.1
+  FramePerScaleY: 0.1
 --- !u!114 &114833912549581316
 MonoBehaviour:
   m_ObjectHideFlags: 1
