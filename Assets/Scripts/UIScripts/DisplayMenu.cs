@@ -10,7 +10,7 @@ public class DisplayMenu : MonoBehaviour {
         menu=GameObject.Find("Menu");
         if(menu==null)
         {
-            menu = Instantiate((GameObject)Resources.Load("Prefabs/Menu"));
+            menu = Instantiate((GameObject)Resources.Load("Menu"));
         }
         HideMenu();
 	}
