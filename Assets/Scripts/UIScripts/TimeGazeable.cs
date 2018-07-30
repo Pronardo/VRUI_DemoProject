@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class TimeGazeable : MonoBehaviour
 {
-    public float GazeTimer = 0.0f;
-    [Tooltip("The local variable will be overwritten & apply the value of the VRCamera on start, if checked")]
-    public bool TimeGazeGlobally = true;
-
     private float timeRemaining;
+    private float gazeTimer;
 
-    // Use this for initialization
     private void OnEnable()
     {
-        if (TimeGazeGlobally)
-        {
-            GazeTimer = GameObject.Find("VRCamera").GetComponent<VREyeRaycaster>().GazeTimer;
-        }
-        timeRemaining = GazeTimer;
+        gazeTimer = GameObject.Find("VRCamera").GetComponent<VREyeRaycaster>().GazeTimer;
+        timeRemaining = gazeTimer;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timeRemaining -= Time.deltaTime;
