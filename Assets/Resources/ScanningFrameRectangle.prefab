@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33792909273054270}
   - component: {fileID: 23394216859363788}
   - component: {fileID: 114701148325172772}
-  - component: {fileID: 114242117258000352}
   m_Layer: 0
   m_Name: ScanningFrameRectangle
   m_TagString: Untagged
@@ -85,17 +84,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1827212031662270}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114242117258000352
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1827212031662270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be856f05eae4e4b458cf600869165102, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114701148325172772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,4 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd13a9ae4413ed142850a5fbb3e1b972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FrameWidth: 0.1
+  FramePerScaleX: 0.1
+  FramePerScaleY: 0.1
+  RelativeFrameDepth: 0.5

@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 4441381658838602}
   - component: {fileID: 33333417705863824}
   - component: {fileID: 23763455847000036}
-  - component: {fileID: 114564604987520376}
   - component: {fileID: 114950562352819734}
   m_Layer: 0
   m_Name: ScanningFrameRectangle
@@ -210,17 +209,6 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018942921029338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be856f05eae4e4b458cf600869165102, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114564604987520376
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1129486075737402}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be856f05eae4e4b458cf600869165102, type: 3}
