@@ -22,6 +22,7 @@ public class ItemEventHandler : MonoBehaviour {
 
     public void OnActivation()
     {
+        Debug.Log("ItemEventHandler: Do Action");
         ActivationEvent.Invoke();
     }
 

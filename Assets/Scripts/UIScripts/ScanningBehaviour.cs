@@ -41,9 +41,13 @@ public class ScanningBehaviour : MonoBehaviour
     //Method to unsubscribe events for AutoFrameScanner purposes
     public void UnsubscribeFromUnityEvents()
     {
-        var eventhandler=this.GetComponent<ItemEventHandler>();
-        eventhandler.GazeEnterEvent.RemoveListener(this.Scan);
-        eventhandler.GazeEnterEvent.RemoveListener(this.Unscan);
+        var eventhandler = this.GetComponent<ItemEventHandler>();
+        if (eventhandler!=null)
+        {
+            
+            eventhandler.GazeEnterEvent.RemoveListener(this.Scan);
+            eventhandler.GazeEnterEvent.RemoveListener(this.Unscan);
+        }    
     }
 }
 
