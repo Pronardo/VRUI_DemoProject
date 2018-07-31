@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,6 +36,14 @@ public class ScanningBehaviour : MonoBehaviour
     {
         frameHandleMeths.ResetFame();
         Debug.Log("ScanningBehaviour: Unscan - deactivate frame");
+    }
+
+    //Method to unsubscribe events for AutoFrameScanner purposes
+    public void UnsubscribeFromUnityEvents()
+    {
+        var eventhandler=this.GetComponent<ItemEventHandler>();
+        eventhandler.GazeEnterEvent.RemoveListener(this.Scan);
+        eventhandler.GazeEnterEvent.RemoveListener(this.Unscan);
     }
 }
 
