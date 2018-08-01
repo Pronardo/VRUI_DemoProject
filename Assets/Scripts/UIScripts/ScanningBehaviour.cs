@@ -6,6 +6,13 @@ using UnityEngine;
 public class ScanningBehaviour : MonoBehaviour
 {
     public ScannableType ScanningObjectType = ScannableType.RECTANGLE;
+    [Tooltip("FramePerScale describes a prozentual scale relative to X-Axis for the appended Frame (Input: 10%=0.1)")]
+    public float FramePerScaleX = 0.0f;
+    [Tooltip("FramePerScale describes a prozentual scale relative to Y-Axis for the appended Frame (Input: 10%=0.1)")]
+    public float FramePerScaleY = 0.0f;
+    [Tooltip("The relation between the depths of the the ScannableObject and the ScanningFrame(Input: 0.5 means 50% of the ScannableObject's depth")]
+    public float RelativeFrameDepth = 0.0f;
+    public bool overrideResizerValues = false;
 
     private GameObject ScanFrameManager;
     private ScanFrameHandler frameHandleMeths;
@@ -27,6 +34,10 @@ public class ScanningBehaviour : MonoBehaviour
     //Order to spawn scan frame around the Object the script is attached to
     public void Scan()
     {
+        if(overrideResizerValues)
+        {
+            frameHandleMeths.OrderFrameRelations(FramePerScaleX, FramePerScaleY, RelativeFrameDepth);
+        }
         frameHandleMeths.EnableFrame(ScanningObjectType, this.gameObject);
         Debug.Log("ScanningBehaviour: Scan - activate frame");
     }

@@ -6,13 +6,18 @@ public class ScanFrameResizer : MonoBehaviour {
 
     //Every object which has the ScanningBehaviour script attached, will set itself as ScannableObject by refering to this property
     public GameObject ScannableObject { get; set; }
+
+    private static float defaultXScale = 0.1f;
+    private static float defaultYScale = 0.1f;
+    private static float defaultZScale = 0.9f;
+
     [Tooltip("FramePerScale describes a prozentual scale relative to X-Axis for the appended Frame (Input: 10%=0.1)")]
-    public float FramePerScaleX = 0.1f;
+    public float FramePerScaleX = defaultXScale;
     [Tooltip("FramePerScale describes a prozentual scale relative to Y-Axis for the appended Frame (Input: 10%=0.1)")]
-    public float FramePerScaleY = 0.1f;
+    public float FramePerScaleY = defaultYScale;
     [Tooltip("The relation between the depths of the the ScannableObject and the ScanningFrame(Input: 0.5 means 50% of the ScannableObject's depth")]
-    public float RelativeFrameDepth = 0.5f;
-   
+    public float RelativeFrameDepth = defaultZScale;
+
     void OnEnable() {
         ResizeFrame(); Debug.Log("ScanFrameResizer: ScanFrameResizer enabled - call ResizeFrame()");
     }
@@ -42,4 +47,12 @@ public class ScanFrameResizer : MonoBehaviour {
         }
         return scannableRenderer.bounds.size;
     }
+
+    void OnDisable()
+    {
+        FramePerScaleX = defaultXScale;
+        FramePerScaleY = defaultYScale;
+        RelativeFrameDepth = defaultZScale;
+    }
 }
+

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ScanFrameHandler : MonoBehaviour
 {
     private GameObject frame = null;
+    ScanFrameResizer resizer;
 
     public void EnableFrame(ScannableType frameType, GameObject scannable)
     {
@@ -20,7 +21,7 @@ public class ScanFrameHandler : MonoBehaviour
         if (frame == null) { Debug.LogError("Invalid Input - No matching ScanningFrameObjects found"); this.enabled = false; }
         Vector3 pos = scannable.transform.position;
         frame.transform.position = new Vector3(pos.x, pos.y, pos.z);
-        ScanFrameResizer resizer = frame.GetComponent<ScanFrameResizer>();
+        resizer = frame.GetComponent<ScanFrameResizer>();
         if (resizer == null) { Debug.LogError("ScanFrameResizer is needed for proper scanning"); this.enabled = false; };
         resizer.ScannableObject = scannable.gameObject;
         frame.SetActive(true);
@@ -32,5 +33,12 @@ public class ScanFrameHandler : MonoBehaviour
         {
             frame.SetActive(false);
         }
+    }
+
+    public void OrderFrameRelations(float relativeXScale, float relativeYScale, float relativeZScale)
+    {
+        resizer.FramePerScaleX = relativeXScale;
+        resizer.FramePerScaleY = relativeYScale;
+        resizer.RelativeFrameDepth = relativeZScale;
     }
 }
