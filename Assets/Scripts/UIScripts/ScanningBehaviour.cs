@@ -12,6 +12,7 @@ public class ScanningBehaviour : MonoBehaviour
     public float FramePerScaleY = 0.0f;
     [Tooltip("The relation between the depths of the the ScannableObject and the ScanningFrame(Input: 0.5 means 50% of the ScannableObject's depth")]
     public float RelativeFrameDepth = 0.0f;
+    [Tooltip("Set this to true and enter preferred values for more frame customization")]
     public bool overrideResizerValues = false;
 
     private GameObject ScanFrameManager;

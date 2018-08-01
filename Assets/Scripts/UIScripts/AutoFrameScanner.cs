@@ -32,6 +32,10 @@ public class AutoFrameScanner : MonoBehaviour
             {
                 if(scannable.enabled)
                 {
+                    if(scannable.overrideResizerValues)
+                    {
+                        handler.OrderFrameRelations(scannable.FramePerScaleX, scannable.FramePerScaleY, scannable.RelativeFrameDepth);
+                    }
                     handler.EnableFrame(scannable.ScanningObjectType, scannable.gameObject);
                     yield return new WaitForSeconds(ScanDelay);
                     handler.ResetFame();

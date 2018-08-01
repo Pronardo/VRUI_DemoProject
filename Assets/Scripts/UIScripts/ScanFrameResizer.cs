@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScanFrameResizer : MonoBehaviour {
+public class ScanFrameResizer : MonoBehaviour
+{
 
     //Every object which has the ScanningBehaviour script attached, will set itself as ScannableObject by refering to this property
     public GameObject ScannableObject { get; set; }
@@ -18,7 +19,8 @@ public class ScanFrameResizer : MonoBehaviour {
     [Tooltip("The relation between the depths of the the ScannableObject and the ScanningFrame(Input: 0.5 means 50% of the ScannableObject's depth")]
     public float RelativeFrameDepth = defaultZScale;
 
-    void OnEnable() {
+    void OnEnable()
+    {
         ResizeFrame(); Debug.Log("ScanFrameResizer: ScanFrameResizer enabled - call ResizeFrame()");
     }
     public void ResizeFrame()
