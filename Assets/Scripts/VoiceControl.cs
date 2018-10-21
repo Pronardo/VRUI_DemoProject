@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+#if UNITY_STANDALONE_WIN
 using UnityEngine.Windows.Speech;
 
 public class VoiceControl : MonoBehaviour {
@@ -18,6 +19,7 @@ public class VoiceControl : MonoBehaviour {
         keywordRecognizer = new KeywordRecognizer(keywordActions.Keys.ToArray());
         keywordRecognizer.OnPhraseRecognized += OnKeywordRecognized;
         keywordRecognizer.Start();
+        
     }
 
     private void OnKeywordRecognized(PhraseRecognizedEventArgs args)
@@ -36,3 +38,4 @@ public class VoiceControl : MonoBehaviour {
         throw new NotImplementedException();
     }
 }
+#endif
